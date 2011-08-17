@@ -172,6 +172,39 @@
     int hours = (int)((elapsed+TT_HOUR/2)/TT_HOUR);
     return [NSString stringWithFormat:TTLocalizedString(@"%d hours ago", @""), hours];
 
+  } else if (elapsed > TT_DAY && elapsed < (TT_DAY * 2) ) {
+    // (rodmaz Aug 16, 2011): Ticket #7: Expand it to support requirement in Social Scavenger
+    // More than one day, less than 2 days
+    // Display: "a day ago"
+    return TTLocalizedString(@"a day ago", @"");
+
+  } else if ( elapsed >= (TT_DAY * 2) && elapsed < TT_MONTH ) {
+      // (rodmaz Aug 16, 2011): Ticket #7: Expand it to support requirement in Social Scavenger
+      // Equal to 2 days or more and less than one month
+      // Display: "x days ago"
+      int days = (int)(elapsed/TT_DAY);
+      return [NSString stringWithFormat:TTLocalizedString(@"%d days ago", @""), days];
+
+  } else if ( elapsed >= TT_MONTH && elapsed < (TT_MONTH * 12) ) {
+      // (rodmaz Aug 16, 2011): Ticket #7: Expand it to support requirement in Social Scavenger
+      // Equal to one or more months and less than one year
+      // Display: "x months ago"
+      int months = (int)(elapsed/TT_MONTH);
+      return [NSString stringWithFormat:TTLocalizedString(@"%d months ago", @""), months];
+
+  } else if ( elapsed >= TT_YEAR && elapsed < (TT_YEAR * 2) ) {
+      // (rodmaz Aug 16, 2011): Ticket #7: Expand it to support requirement in Social Scavenger
+      // Equal to one year and less than 2 years
+      // Display: "x months ago"
+      return TTLocalizedString(@"one year ago", @"");
+
+  } else if ( elapsed >= (TT_YEAR * 2) ) {
+      // (rodmaz Aug 16, 2011): Ticket #7: Expand it to support requirement in Social Scavenger
+      // Equal or more than 2 years
+      // Display: "x years ago"
+      int years = (int)(elapsed/TT_YEAR);
+      return [NSString stringWithFormat:TTLocalizedString(@"%d years ago", @""), years];
+
   } else {
     return [self formatDateTime];
   }
