@@ -43,6 +43,8 @@
 // Core
 #import "Three20Core/TTCorePreprocessorMacros.h"
 
+static const CGFloat kEmptyHeaderHeight = 0.0f;
+static const CGFloat kSectionHeaderHeight = 35;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -163,6 +165,22 @@
   }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Rodrigo: This complies to a change in iOS5 in which table section headers are displayed.
+ * https://devforums.apple.com/message/463424
+ */
+- (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section {
+    if ([tableView.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)]) {
+        NSString* title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
+        if (!title.length) {
+            return kEmptyHeaderHeight;
+        } else {
+            return kSectionHeaderHeight;
+        }        
+    }
+    return kEmptyHeaderHeight;
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
