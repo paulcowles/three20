@@ -87,7 +87,7 @@
 
 - (void)layout {
   TTFlowLayout* flowLayout = [[[TTFlowLayout alloc] init] autorelease];
-  flowLayout.padding = 20;
+  flowLayout.padding = 2;
   flowLayout.spacing = 20;
   CGSize size = [flowLayout layoutSubviews:self.view.subviews forView:self.view];
 

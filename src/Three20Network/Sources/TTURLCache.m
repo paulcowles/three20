@@ -507,7 +507,9 @@ static NSMutableDictionary* gNamedCaches = nil;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)storeImage:(UIImage*)image forURL:(NSString*)URL {
-  [self storeImage:image forURL:URL force:NO];
+    // (Rodrigo, 5/5/2011): we force the storage of images as resources in 
+    // SocialScavenger may be larger than the limit imposed by Three20
+    [self storeImage:image forURL:URL force:YES];
 }
 
 

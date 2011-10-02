@@ -598,19 +598,22 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (TTStyle*)launcherButtonImage:(UIControlState)state {
-  TTStyle* style =
-    [TTBoxStyle styleWithMargin:UIEdgeInsetsMake(-7, 0, 11, 0) next:
-    [TTShapeStyle styleWithShape:[TTRoundedRectangleShape shapeWithRadius:8] next:
-    [TTImageStyle styleWithImageURL:nil defaultImage:nil contentMode:UIViewContentModeCenter
-                  size:CGSizeZero next:nil]]];
-
-  if (state == UIControlStateHighlighted || state == UIControlStateSelected) {
-      [style addStyle:
+    
+    if (state == UIControlStateSelected || state == UIControlStateHighlighted) {
+        return 
         [TTBlendStyle styleWithBlend:kCGBlendModeSourceAtop next:
-        [TTSolidFillStyle styleWithColor:RGBACOLOR(0,0,0,0.5) next:nil]]];
-  }
-
-  return style;
+         [TTSolidFillStyle styleWithColor:RGBACOLOR(0,0,0,0.5) next:
+          [TTBoxStyle styleWithMargin:UIEdgeInsetsMake(-7, 0, 11, 0) next:
+           [TTShapeStyle styleWithShape:[TTRoundedRectangleShape shapeWithRadius:8] next:
+            [TTImageStyle styleWithImageURL:nil defaultImage:nil contentMode:UIViewContentModeCenter
+                                       size:CGSizeZero next:nil]]]]];
+    } else {
+        return           
+        [TTBoxStyle styleWithMargin:UIEdgeInsetsMake(-7, 0, 11, 0) next:
+          [TTShapeStyle styleWithShape:[TTRoundedRectangleShape shapeWithRadius:8] next:
+           [TTImageStyle styleWithImageURL:nil defaultImage:nil contentMode:UIViewContentModeCenter
+                                      size:CGSizeZero next:nil]]];    
+    }
 }
 
 
