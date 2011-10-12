@@ -402,7 +402,7 @@
 		6EE7366C11849C5800A35176 /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libThree20Core.a;
+			path = lib.a;
 			remoteRef = 6EE7366B11849C5800A35176 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

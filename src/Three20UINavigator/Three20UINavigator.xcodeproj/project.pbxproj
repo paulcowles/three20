@@ -477,14 +477,14 @@
 		6E3C37BA118C96A60079637E /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libThree20UICommon.a;
+			path = lib.a;
 			remoteRef = 6E3C37B9118C96A60079637E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6EE7366C11849C5800A35176 /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libThree20Core.a;
+			path = lib.a;
 			remoteRef = 6EE7366B11849C5800A35176 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

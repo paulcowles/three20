@@ -355,42 +355,42 @@
 		6E6454A71184D42800F08CB1 /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libThree20Style.a;
+			path = lib.a;
 			remoteRef = 6E6454A61184D42800F08CB1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6E7F9685118E353800443B46 /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libThree20UI.a;
+			path = lib.a;
 			remoteRef = 6E7F9684118E353800443B46 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6EDAEA09118CA5B50008133C /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libThree20UICommon.a;
+			path = lib.a;
 			remoteRef = 6EDAEA08118CA5B50008133C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6EDAEA12118CA5BE0008133C /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libThree20UINavigator.a;
+			path = lib.a;
 			remoteRef = 6EDAEA11118CA5BE0008133C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6EE7366C11849C5800A35176 /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libThree20Core.a;
+			path = lib.a;
 			remoteRef = 6EE7366B11849C5800A35176 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6EE738A31184ADB400A35176 /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libThree20Network.a;
+			path = lib.a;
 			remoteRef = 6EE738A21184ADB400A35176 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
