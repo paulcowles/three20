@@ -279,7 +279,7 @@
 		6E3C37B5118C96A60079637E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E3C37BA118C96A60079637E /* lib.a */,
+				6E3C37BA118C96A60079637E /* libThree20UICommon.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -359,7 +359,7 @@
 		6EE7366711849C5800A35176 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6EE7366C11849C5800A35176 /* lib.a */,
+				6EE7366C11849C5800A35176 /* libThree20Core.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -474,17 +474,17 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6E3C37BA118C96A60079637E /* lib.a */ = {
+		6E3C37BA118C96A60079637E /* libThree20UICommon.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = lib.a;
+			path = libThree20UICommon.a;
 			remoteRef = 6E3C37B9118C96A60079637E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6EE7366C11849C5800A35176 /* lib.a */ = {
+		6EE7366C11849C5800A35176 /* libThree20Core.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = lib.a;
+			path = libThree20Core.a;
 			remoteRef = 6EE7366B11849C5800A35176 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
