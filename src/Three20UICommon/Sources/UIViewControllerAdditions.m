@@ -293,13 +293,6 @@ static const NSTimeInterval kGarbageCollectionInterval = 20;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)showBars:(BOOL)show animated:(BOOL)animated {
-#ifdef __IPHONE_3_2
-	if ([[UIApplication sharedApplication] respondsToSelector:@selector(setStatusBarHidden:withAnimation:)])
-		[[UIApplication sharedApplication] setStatusBarHidden:!show withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
-	else
-#endif
-		[[UIApplication sharedApplication] setStatusBarHidden:!show animated:animated];
-
   if (animated) {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:TT_TRANSITION_DURATION];
