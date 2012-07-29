@@ -158,7 +158,7 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
     
     // If dragging ends and we are far enough to be fully showing the header view trigger a
     // load as long as we arent loading already
-    if ( scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.height) && !_model.isLoading ) {
+    if ( scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.height - 300.0f) && !_model.isLoading ) {
         [_model load:TTURLRequestCachePolicyNetwork more:YES];
     }
 }
