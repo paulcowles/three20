@@ -17,7 +17,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @return YES if the URL begins with "bundle://"
+ * @return YES if the URL begins with "bundle-PlayTorontoLibraryUI://"
  */
 BOOL TTIsBundleURL(NSString* URL);
 
@@ -43,6 +43,11 @@ void TTSetDefaultBundle(NSBundle* bundle);
  * @see TTSetDefaultBundle
  */
 NSBundle* TTGetDefaultBundle();
+
+/**
+ * Retrieves an specific bundle.
+ */
+NSBundle* TTBundle(NSString *bundleName);
 
 /**
  * @return The main bundle path concatenated with the given relative path.

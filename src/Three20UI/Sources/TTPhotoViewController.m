@@ -86,7 +86,7 @@ static const NSInteger kActivityLabelTag          = 96;
     self.wantsFullScreenLayout = YES;
     self.hidesBottomBarWhenPushed = YES;
 
-    self.defaultImage = TTIMAGE(@"bundle://Three20.bundle/images/photoDefault.png");
+    self.defaultImage = TTIMAGE(@"bundle-Three20://images/photoDefault.png");
   }
 
   return self;
@@ -483,10 +483,10 @@ static const NSInteger kActivityLabelTag          = 96;
   [_innerView addSubview:_scrollView];
 
   _nextButton = [[UIBarButtonItem alloc] initWithImage:
-                 TTIMAGE(@"bundle://Three20.bundle/images/nextIcon.png")
+                 TTIMAGE(@"bundle-Three20://images/nextIcon.png")
                                                  style:UIBarButtonItemStylePlain target:self action:@selector(nextAction)];
   _previousButton = [[UIBarButtonItem alloc] initWithImage:
-                     TTIMAGE(@"bundle://Three20.bundle/images/previousIcon.png")
+                     TTIMAGE(@"bundle-Three20://images/previousIcon.png")
                                                      style:UIBarButtonItemStylePlain target:self action:@selector(previousAction)];
 
   UIBarButtonItem* playButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:

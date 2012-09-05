@@ -174,12 +174,12 @@
   _activityItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
 
   _backButton = [[UIBarButtonItem alloc] initWithImage:
-                 TTIMAGE(@"bundle://Three20.bundle/images/backIcon.png")
+                 TTIMAGE(@"bundle-Three20://images/backIcon.png")
                                                  style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
   _backButton.tag = 2;
   _backButton.enabled = NO;
   _forwardButton = [[UIBarButtonItem alloc] initWithImage:
-                    TTIMAGE(@"bundle://Three20.bundle/images/forwardIcon.png")
+                    TTIMAGE(@"bundle-Three20://images/forwardIcon.png")
                                                     style:UIBarButtonItemStylePlain target:self action:@selector(forwardAction)];
   _forwardButton.tag = 1;
   _forwardButton.enabled = NO;

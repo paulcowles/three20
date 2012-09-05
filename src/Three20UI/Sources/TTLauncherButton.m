@@ -204,7 +204,7 @@ static const NSInteger kMaxBadgeNumber = 99;
 - (TTButton*)closeButton {
   if (!_closeButton && _item.canDelete) {
     _closeButton = [[TTButton buttonWithStyle:@"launcherCloseButton:"] retain];
-    [_closeButton setImage:@"bundle://Three20.bundle/images/closeButton.png"
+    [_closeButton setImage:@"bundle-Three20://images/closeButton.png"
                   forState:UIControlStateNormal];
     _closeButton.size = CGSizeMake(26,29);
     _closeButton.isVertical = YES;

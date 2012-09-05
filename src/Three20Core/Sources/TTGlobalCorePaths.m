@@ -22,7 +22,7 @@ static NSBundle* globalBundle = nil;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 BOOL TTIsBundleURL(NSString* URL) {
-  return [URL hasPrefix:@"bundle://"];
+  return [URL hasPrefix:@"bundle-"];
 }
 
 
@@ -45,11 +45,36 @@ NSBundle* TTGetDefaultBundle() {
   return (nil != globalBundle) ? globalBundle : [NSBundle mainBundle];
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+NSBundle* TTBundle(NSString *bundleName) {
+    static NSMutableDictionary *bundleDictionary = nil;
+    if ( bundleDictionary == nil ) {
+        bundleDictionary = [[NSMutableDictionary alloc] init];
+    }
+    NSBundle *bundle = [bundleDictionary objectForKey:bundleName];
+    if ( !bundle ) {
+        NSString* path = [[[[NSBundle mainBundle] resourcePath]
+                           stringByAppendingPathComponent:bundleName] stringByAppendingPathExtension:@"bundle"];
+        bundle = [NSBundle bundleWithPath:path];
+        assert( bundle );
+        if (bundle) {
+            [bundleDictionary setObject:bundle forKey:bundleName];
+        } else {
+            NSLog(@"could not locate bundle %@ in application bundle", bundleName);
+        }
+    }
+    return bundle;
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 NSString* TTPathForBundleResource(NSString* relativePath) {
-  NSString* resourcePath = [TTGetDefaultBundle() resourcePath];
-  return [resourcePath stringByAppendingPathComponent:relativePath];
+    NSRange colonSlashRange = [relativePath rangeOfString:@"://"];
+    NSRange bundleRange = { .location = 0, .length = colonSlashRange.location };
+    NSString *bundleName = [relativePath substringWithRange:bundleRange];
+    NSBundle *bundle = TTBundle(bundleName);
+    NSString* resourcePath = [bundle resourcePath];
+    NSString *pathInBundle = [relativePath substringFromIndex:(colonSlashRange.location + colonSlashRange.length)];
+    return [resourcePath stringByAppendingPathComponent:pathInBundle];
 }
 
 
