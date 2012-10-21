@@ -249,7 +249,7 @@ static NSMutableDictionary* gNamedCaches = nil;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (UIImage*)loadImageFromBundle:(NSString*)URL {
-  NSString* path = TTPathForBundleResource([URL substringFromIndex:7]);
+  NSString* path = TTPathForBundleResource([URL substringFromIndex:9]);
   return [UIImage imageWithContentsOfFile:path];
 }
 
@@ -416,7 +416,7 @@ static NSMutableDictionary* gNamedCaches = nil;
   }
 
   // We'd ideally use stringByAppendingPathExtension: in this method, but it seems
-  // to wreck bundle-PlayTorontoLibraryUI:// urls by replacing them with bundle:/ prefixes. Strange.
+  // to wreck bundle:// urls by replacing them with bundle:/ prefixes. Strange.
   NSString* pathExtension = [urlPath pathExtension];
 
   NSString* urlPathWithNoExtension = [urlPath substringToIndex:

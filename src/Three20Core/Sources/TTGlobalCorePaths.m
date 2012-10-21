@@ -22,7 +22,7 @@ static NSBundle* globalBundle = nil;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 BOOL TTIsBundleURL(NSString* URL) {
-  return [URL hasPrefix:@"bundle-"];
+  return [URL hasPrefix:@"bundle://"];
 }
 
 
@@ -68,13 +68,8 @@ NSBundle* TTBundle(NSString *bundleName) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 NSString* TTPathForBundleResource(NSString* relativePath) {
-    NSRange colonSlashRange = [relativePath rangeOfString:@"://"];
-    NSRange bundleRange = { .location = 0, .length = colonSlashRange.location };
-    NSString *bundleName = [relativePath substringWithRange:bundleRange];
-    NSBundle *bundle = TTBundle(bundleName);
-    NSString* resourcePath = [bundle resourcePath];
-    NSString *pathInBundle = [relativePath substringFromIndex:(colonSlashRange.location + colonSlashRange.length)];
-    return [resourcePath stringByAppendingPathComponent:pathInBundle];
+  NSString* resourcePath = [TTGetDefaultBundle() resourcePath];
+  return [resourcePath stringByAppendingPathComponent:relativePath];
 }
 
 

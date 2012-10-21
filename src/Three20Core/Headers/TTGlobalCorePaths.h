@@ -17,7 +17,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @return YES if the URL begins with "bundle-PlayTorontoLibraryUI://"
+ * @return YES if the URL begins with "bundle://SocialScavengerLibraryUI.bundle/"
  */
 BOOL TTIsBundleURL(NSString* URL);
 

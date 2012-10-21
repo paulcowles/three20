@@ -38,7 +38,7 @@
 
 /**
  * The path of the image. This may be a web path (http://path/to/image.gif) or a local bundle
- * path (bundle-PlayTorontoLibraryUI://path/to/image.png).
+ * path (bundle://path/to/image.png).
  */
 @property (nonatomic, copy) NSString* urlPath;
 

@@ -72,16 +72,16 @@
                 isEqualToString:@".gif"],
                @".gif should resolve to .gif");
 
-  STAssertTrue([[TTURLCache doubleImageURLPath:@"bundle-PlayTorontoLibraryUI://both.png"]
-                isEqualToString:@"bundle-PlayTorontoLibraryUI://both@2x.png"],
+  STAssertTrue([[TTURLCache doubleImageURLPath:@"bundle://SocialScavengerLibraryUI.bundle/both.png"]
+                isEqualToString:@"bundle://SocialScavengerLibraryUI.bundle/both@2x.png"],
                @"both.png should resolve to both@2x.png.");
 
-  STAssertTrue([[TTURLCache doubleImageURLPath:@"bundle-PlayTorontoLibraryUI://both"]
-                isEqualToString:@"bundle-PlayTorontoLibraryUI://both@2x"],
+  STAssertTrue([[TTURLCache doubleImageURLPath:@"bundle://SocialScavengerLibraryUI.bundle/both"]
+                isEqualToString:@"bundle://SocialScavengerLibraryUI.bundle/both@2x"],
                @"both should resolve to both@2x.");
 
-  STAssertTrue([[TTURLCache doubleImageURLPath:@"bundle-PlayTorontoLibraryUI://images/both"]
-                isEqualToString:@"bundle-PlayTorontoLibraryUI://images/both@2x"],
+  STAssertTrue([[TTURLCache doubleImageURLPath:@"bundle://SocialScavengerLibraryUI.bundle/images/both"]
+                isEqualToString:@"bundle://SocialScavengerLibraryUI.bundle/images/both@2x"],
                @"images/both should resolve to images/both@2x.");
 }
 
@@ -93,13 +93,13 @@
 
   TTSetDefaultBundle(testBundle);
 
-  STAssertTrue([[TTURLCache sharedCache] hasImageForURL:@"bundle-PlayTorontoLibraryUI://both.png" fromDisk:YES],
+  STAssertTrue([[TTURLCache sharedCache] hasImageForURL:@"bundle://SocialScavengerLibraryUI.bundle/both.png" fromDisk:YES],
                @"both.png should exist.");
 
-  STAssertTrue([[TTURLCache sharedCache] hasImageForURL:@"bundle-PlayTorontoLibraryUI://only.png" fromDisk:YES],
+  STAssertTrue([[TTURLCache sharedCache] hasImageForURL:@"bundle://SocialScavengerLibraryUI.bundle/only.png" fromDisk:YES],
                @"only@2x.png should exist.");
 
-  STAssertNotNil([[TTURLCache sharedCache] imageForURL:@"bundle-PlayTorontoLibraryUI://both.png" fromDisk:YES],
+  STAssertNotNil([[TTURLCache sharedCache] imageForURL:@"bundle://SocialScavengerLibraryUI.bundle/both.png" fromDisk:YES],
                @"both@2x.png should exist.");
 
   // Release the default bundle now that we're done with it.

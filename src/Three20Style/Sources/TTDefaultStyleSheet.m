@@ -513,7 +513,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (TTStyle*)tabOverflowLeft {
-  UIImage* image = TTIMAGE(@"bundle-Three20://images/overflowLeft.png");
+  UIImage* image = TTIMAGE(@"bundle://Three20.bundle/images/overflowLeft.png");
   TTImageStyle *style = [TTImageStyle styleWithImage:image next:nil];
   style.contentMode = UIViewContentModeCenter;
   return style;
@@ -522,7 +522,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (TTStyle*)tabOverflowRight {
-  UIImage* image = TTIMAGE(@"bundle-Three20://images/overflowRight.png");
+  UIImage* image = TTIMAGE(@"bundle://Three20.bundle/images/overflowRight.png");
   TTImageStyle *style = [TTImageStyle styleWithImage:image next:nil];
   style.contentMode = UIViewContentModeCenter;
   return style;
@@ -1163,7 +1163,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (UIImage*)tableRefreshHeaderArrowImage {
-  return TTIMAGE(@"bundle-Three20://images/blueArrow.png");
+  return TTIMAGE(@"bundle://Three20.bundle/images/blueArrow.png");
 }
 
 
