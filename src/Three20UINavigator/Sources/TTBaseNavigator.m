@@ -240,7 +240,7 @@ UIKIT_EXTERN NSString *const UIApplicationWillEnterForegroundNotification __attr
       [_rootContainer navigator:self setRootViewController:_rootViewController];
 
     } else {
-      [self.window addSubview:_rootViewController.view];
+      [self.window setRootViewController:_rootViewController];
     }
   }
 }
