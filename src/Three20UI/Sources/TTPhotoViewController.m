@@ -207,8 +207,6 @@ static const NSInteger kActivityLabelTag          = 96;
       self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc]
                                                 initWithTitle:TTLocalizedString(@"See All", @"See all photo thumbnails")
                                                 style:UIBarButtonItemStyleBordered target:self action:@selector(showThumbnails)] autorelease];
-    } else {
-      self.navigationItem.rightBarButtonItem = nil;
     }
   } else {
     self.navigationItem.rightBarButtonItem = nil;
