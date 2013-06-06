@@ -53,7 +53,8 @@
   TTDASSERT([data isKindOfClass:[UIImage class]]
             || [data isKindOfClass:[NSData class]]);
   TTDASSERT(nil == _image);
-
+    
+  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
   if ([data isKindOfClass:[UIImage class]]) {
     _image = [data retain];
 
@@ -80,8 +81,10 @@
       }
 
       _image = [image retain];
+      [pool release];
 
     } else {
+      [pool release];
       return [NSError errorWithDomain:kTTNetworkErrorDomain
                                  code:kTTNetworkErrorCodeInvalidImage
                              userInfo:nil];
