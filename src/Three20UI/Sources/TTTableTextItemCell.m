@@ -83,9 +83,15 @@ static const CGFloat kMaxLabelHeight = 2000;
 
   CGFloat width = tableView.width - (kTableCellHPadding*2 + [tableView tableCellMargin]*2);
   UIFont* font = [self textFontForItem:item];
-  CGSize size = [item.text sizeWithFont:font
-                      constrainedToSize:CGSizeMake(width, CGFLOAT_MAX)
-                          lineBreakMode:UILineBreakModeTailTruncation];
+
+  CGSize size = CGSizeZero;
+  if ( [item.text respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)] ) {
+      CGRect boundingRect = [item.text boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName: font } context:nil];
+      size = CGSizeMake( ceil(boundingRect.size.width), ceil(boundingRect.size.height));
+      
+  } else {
+      size = [item.text sizeWithFont:font constrainedToSize:CGSizeMake(width, CGFLOAT_MAX) lineBreakMode:UILineBreakModeTailTruncation];
+  }
   if (size.height > kMaxLabelHeight) {
     size.height = kMaxLabelHeight;
   }
