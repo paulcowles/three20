@@ -152,8 +152,15 @@
 
   if (!self.popupViewController) {
     UINavigationBar* bar = self.navigationController.navigationBar;
-    bar.tintColor = _navigationBarTintColor;
-    bar.barStyle = _navigationBarStyle;
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+      bar.tintColor = _navigationBarTintColor;
+      bar.barStyle = _navigationBarStyle;
+        
+    } else {
+      bar.barTintColor = _navigationBarTintColor;
+      bar.barStyle = UIBarStyleDefault;
+      bar.translucent = YES;
+    }
     
     if (!TTIsPad()) {
       [[UIApplication sharedApplication] setStatusBarStyle:_statusBarStyle animated:YES];
