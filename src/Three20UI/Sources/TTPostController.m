@@ -193,8 +193,8 @@ static const CGFloat kMarginY = 6;
                                  self.view.orientationWidth,
                                  self.view.orientationHeight - (keyboard+_navigationBar.height));
 
-  _textView.frame = CGRectMake(kMarginX, kMarginY+_navigationBar.height,
-                                 _screenView.width - kMarginX*2,
+  _textView.frame = CGRectMake(kMarginX * 3, kMarginY+_navigationBar.height,
+                                 _screenView.width - kMarginX*6,
                                  _screenView.height - kMarginY*2);
   _textView.hidden = NO;
 }
@@ -279,7 +279,6 @@ static const CGFloat kMarginY = 6;
   _textView.delegate = self;
   _textView.font = TTSTYLEVAR(font);
   _textView.textColor = [UIColor blackColor];
-  _textView.contentInset = UIEdgeInsetsMake(0, 4, 0, 4);
   _textView.keyboardAppearance = UIKeyboardAppearanceAlert;
   _textView.backgroundColor = [UIColor clearColor];
   [self.view addSubview:_textView];
