@@ -292,7 +292,7 @@ static const NSInteger kActivityLabelTag          = 96;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)isShowingChrome {
   UINavigationBar* bar = self.navigationController.navigationBar;
-  return bar ? bar.alpha != 0 : 1;
+  return ![bar isHidden];
 }
 
 
