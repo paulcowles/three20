@@ -570,6 +570,7 @@ static const NSInteger kActivityLabelTag          = 96;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)showBars:(BOOL)show animated:(BOOL)animated {
+  show = YES;
   [super showBars:show animated:animated];
 
   CGFloat alpha = show ? 1 : 0;
